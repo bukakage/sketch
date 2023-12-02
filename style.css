@@ -1,0 +1,93 @@
+        /* Style for the square divs */
+        .grid-container4 {
+            display: grid;
+            width: 600px;
+            height: 600px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            grid-template-columns: repeat(16, 1fr);
+        }
+        .grid-container5 {
+            display: grid;
+            width: 600px;
+            height: 600px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            grid-template-columns: repeat(25, 1fr);
+        }
+        .grid-container6 {
+            display: grid;
+            width: 600px;
+            height: 600px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            grid-template-columns: repeat(36, 1fr);
+        }
+        .grid-container7 {
+            display: grid;
+            width: 600px;
+            height: 600px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            grid-template-columns: repeat(49, 1fr);
+        }
+        .grid-container8 {
+            display: grid;
+            width: 600px;
+            height: 600px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            grid-template-columns: repeat(64, 1fr);
+        }
+        .grid-container9 {
+            display: grid;
+            width: 600px;
+            height: 600px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            grid-template-columns: repeat(81, 1fr);
+        }
+        .grid-container10 {
+            display: grid;
+            width: 600px;
+            height: 600px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            grid-template-columns: repeat(100, 1fr);
+        }
+
+        .grid-item {
+            width: auto;
+            height: auto;
+            background-color: #ddd;
+            border: 1px solid #fff;
+        }
+        html {
+            /* footer support */
+            position: relative;
+            min-height: 100%;
+          }
+          body {
+            background-color: var(--primary-light);
+            color: var(--primary-dark);
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            /* footer support */
+            margin-bottom: 100px;
+          }
+          .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 10px;
+            font-size: 20px;
+          }
+          
+          .fa-github {
+            color: var(--primary-dark);
+            font-size: 24px;
+            transition: transform 0.3s ease-in-out;
+          }
+          
+          .fa-github:hover {
+            transform: rotate(360deg) scale(1.2);
+          }
+          
