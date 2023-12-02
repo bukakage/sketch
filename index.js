@@ -7,8 +7,9 @@ let currentColor = DEFAULT_COLOR
 let currentMode = DEFAULT_MODE
 let currentSize = DEFAULT_SIZE
 
-function setCurrentColor(newColor) {
-    currentColor = newColor
+function setCurrentColor() {
+            // Get the selected color
+
   }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -23,7 +24,9 @@ document.addEventListener("DOMContentLoaded", function() {
             gridItem.classList.add("grid-item");
             gridContainer.appendChild(gridItem);
 
-            
+            const colorPicker = document.getElementById("colorPicker");
+            selectedColor = colorPicker.value;
+
                         // Add click event listener to toggle 'clicked' class
                         gridItem.addEventListener("click", function () {
                             // gridItem.classList.toggle("clicked");
@@ -86,13 +89,17 @@ function changeSqrBtn() {
     // Create 16x16 grid items and append them to the container
     for (let i = 0; i < sqrNum; i++) {
         for (let j = 0; j < sqrNum; j++) {
+            
+            const colorPicker = document.getElementById("colorPicker");
+            selectedColor = colorPicker.value;
+
             const gridItem = document.createElement("div");
             gridItem.classList.add("grid-item");
 
             // Add click event listener to toggle 'clicked' class
             gridItem.addEventListener("click", function () {
                 // gridItem.classList.toggle("clicked");
-                gridItem.style.backgroundColor = "#fff";
+                gridItem.style.backgroundColor = selectedColor;
             });
 
             // Add mousedown event listener to track mouse down
