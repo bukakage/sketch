@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Canvas App</title>
+    <style>
+        /* Add any additional styles for your app */
+    </style>
+</head>
+<body>
+    <div id="container">
+        <!-- Include the canvas element from your existing app -->
+        <canvas id="yourCanvas" width="800" height="600" style="border:1px solid #000; background-color: aqua;">
+        shape</canvas>
+
+        <!-- Button to save the canvas content as PNG -->
+        <button onclick="saveCanvasAsPNG()">Save Canvas as PNG</button>
+    </div>
+
+    <script>
+        // Your existing app code
+        // ...
+
+        function saveCanvasAsPNG() {
+            // Get the canvas element
+            const canvas = document.getElementById('yourCanvas');
+
+            // Check if the canvas element is present
+            if (!canvas) {
+                console.error("Canvas element not found.");
+                return;
+            }
+
+            // Create a new Image object
+            const img = new Image();
+
+            // Set the source of the image to the data URL of the canvas
+            img.src = canvas.toDataURL("image/png");
+
+            // Create a temporary link element
+            const link = document.createElement('a');
+
+            // Set the download attribute with a desired filename
+            link.download = 'canvas_image.png';
+
+            // Set the href attribute with the data URL of the canvas
+            link.href = img.src;
+
+            // Simulate a click on the link to trigger the download
+            link.click();
+        }
+    </script>
+</body>
+</html>
