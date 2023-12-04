@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         // // Add mousedown event listener to track mouse down
                         gridItem.addEventListener("mousedown", function () {
                             isMouseDown = true;
-                            gridItem.style.backgroundColor = "#fff";
+                            gridItem.style.backgroundColor = currentColor;
                         });
 
                         // Add mouseover event listener to change color when dragged
@@ -99,7 +99,7 @@ function changeSqrBtn() {
             // Add click event listener to toggle 'clicked' class
             gridItem.addEventListener("click", function () {
                 // gridItem.classList.toggle("clicked");
-                gridItem.style.backgroundColor = selectedColor;
+                gridItem.style.backgroundColor = currentColor;
             });
 
             // Add mousedown event listener to track mouse down
