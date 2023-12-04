@@ -37,10 +37,10 @@ document.addEventListener("DOMContentLoaded", function() {
                         });
 
                         // // Add mousedown event listener to track mouse down
-                        // gridItem.addEventListener("mousedown", function () {
-                        //     isMouseDown = true;
-                        //     gridItem.style.backgroundColor = "#fff";
-                        // });
+                        gridItem.addEventListener("mousedown", function () {
+                            isMouseDown = true;
+                            gridItem.style.backgroundColor = "#fff";
+                        });
 
                         // Add mouseover event listener to change color when dragged
                                        
@@ -166,5 +166,25 @@ function clearContent() {
     // Iterate through each element and remove the class
     gridContainers.forEach(gridContainer => {
         gridContainer.classList.remove(`grid-container${currentSqrNum}`);
+    });
+}
+
+
+function saveAsPNG() {
+    const gridContainer = document.querySelector(".grid-container4");
+
+    // Check if gridContainer is present
+    if (!gridContainer) {
+        console.error("Grid container not found.");
+        return;
+    }
+
+    // Use html2canvas to capture the content of the grid-container
+    html2canvas(gridContainer).then(canvas => {
+        // Trigger the download of the canvas as PNG
+        const link = document.createElement("a");
+        link.href = canvas.toDataURL("image/png");
+        link.download = "sketch.png";
+        link.click();
     });
 }
