@@ -11,8 +11,7 @@
 <body>
     <div id="container">
         <!-- Include the canvas element from your existing app -->
-        <canvas id="yourCanvas" width="800" height="600" style="border:1px solid #000; background-color: aqua;">
-        shape</canvas>
+        <canvas id="yourCanvas" width="800" height="600" style="border:1px solid #000;"></canvas>
 
         <!-- Button to save the canvas content as PNG -->
         <button onclick="saveCanvasAsPNG()">Save Canvas as PNG</button>
@@ -32,23 +31,26 @@
                 return;
             }
 
-            // Create a new Image object
-            const img = new Image();
+            // Convert the canvas content to a Blob
+            canvas.toBlob(function(blob) {
+                // Create a temporary link element
+                const link = document.createElement('a');
 
-            // Set the source of the image to the data URL of the canvas
-            img.src = canvas.toDataURL("image/png");
+                // Set the download attribute with a desired filename
+                link.download = 'canvas_image.png';
 
-            // Create a temporary link element
-            const link = document.createElement('a');
+                // Create a URL for the Blob and set it as the href attribute
+                link.href = URL.createObjectURL(blob);
 
-            // Set the download attribute with a desired filename
-            link.download = 'canvas_image.png';
+                // Append the link to the document
+                document.body.appendChild(link);
 
-            // Set the href attribute with the data URL of the canvas
-            link.href = img.src;
+                // Simulate a click on the link to trigger the download
+                link.click();
 
-            // Simulate a click on the link to trigger the download
-            link.click();
+                // Remove the link from the document
+                document.body.removeChild(link);
+            }, 'image/png');
         }
     </script>
 </body>
