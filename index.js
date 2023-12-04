@@ -36,11 +36,11 @@ document.addEventListener("DOMContentLoaded", function() {
                             gridItem.style.backgroundColor = currentColor;
                         });
 
-                        // Add mousedown event listener to track mouse down
-                        gridItem.addEventListener("mousedown", function () {
-                            isMouseDown = true;
-                            gridItem.style.backgroundColor = "#fff";
-                        });
+                        // // Add mousedown event listener to track mouse down
+                        // gridItem.addEventListener("mousedown", function () {
+                        //     isMouseDown = true;
+                        //     gridItem.style.backgroundColor = "#fff";
+                        // });
 
                         // Add mouseover event listener to change color when dragged
                                        
@@ -105,13 +105,13 @@ function changeSqrBtn() {
             // Add mousedown event listener to track mouse down
             gridItem.addEventListener("mousedown", function () {
                 isMouseDown = true;
-                gridItem.style.backgroundColor = "#fff";
+                gridItem.style.backgroundColor = currentColor;
             });
 
             // Add mouseover event listener to change color when dragged
             gridItem.addEventListener("mouseover", function () {
                 if (isMouseDown) {
-                    gridItem.style.backgroundColor = "#fff";
+                    gridItem.style.backgroundColor = currentColor;
                 }
             });
 
