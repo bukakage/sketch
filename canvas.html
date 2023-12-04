@@ -21,6 +21,24 @@
         // Your existing app code
         // ...
 
+        function drawSomethingOnCanvas() {
+            // Get the canvas element
+            const canvas = document.getElementById('yourCanvas');
+
+            // Check if the canvas element is present
+            if (!canvas) {
+                console.error("Canvas element not found.");
+                return;
+            }
+
+            // Get the 2D context of the canvas
+            const ctx = canvas.getContext('2d');
+
+            // Draw a simple rectangle on the canvas
+            ctx.fillStyle = 'blue';
+            ctx.fillRect(50, 50, 200, 100);
+        }
+
         function saveCanvasAsPNG() {
             // Get the canvas element
             const canvas = document.getElementById('yourCanvas');
@@ -30,6 +48,9 @@
                 console.error("Canvas element not found.");
                 return;
             }
+
+            // Draw something on the canvas
+            drawSomethingOnCanvas();
 
             // Convert the canvas content to a Blob
             canvas.toBlob(function(blob) {
